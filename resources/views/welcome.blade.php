@@ -29,9 +29,7 @@
          $Android = stripos($useragent, "Android"); 
         $iOS = stripos($useragent, "iOS");
         $Windows = stripos($useragent, "Windows"); 
-        echo($useragent);  
-       echo($Windows);
-       echo($Android);
+      
    @endphp
       <div class="row">
       @foreach ($files as $file )
