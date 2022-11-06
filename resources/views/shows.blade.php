@@ -5,10 +5,9 @@
         <meta name="viewport" >
 
         <title>Laravel</title>
-        
 <!-- CSS only -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-<link href="/streaming/streaming/public/storage/css/style.css" rel="stylesheet">           
+<link href="/streaming/streaming/public/storage/css/style.css" rel="stylesheet">     
 <!-- Fonts -->
         <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 <!-- JavaScript Bundle with Popper -->
@@ -26,7 +25,37 @@
     </head>
     <body class="antialiased">
       @include('layouts.header')
+      <div class="shows_container">
+      @php
+      $useragent=$_SERVER['HTTP_USER_AGENT'];
+         $Android = stripos($useragent, "Android"); 
+        $iOS = stripos($useragent, "iOS");
+        $Windows = stripos($useragent, "Windows"); 
+      
+   @endphp
+      <div class="row">
+      @foreach ($directories as $directory )
+      @php
+     $infos=pathinfo($directory);
+     $filename=$infos['filename'];
+            
+        
+    @endphp
     
-       
+      <div class="col-sm-3">
+    <div class="card">
+   
+    <div class="card-body">
+      <h5 class="card-title"> Name; {{$filename}}</h5>
+      <a class="btn btn-primary" href="/streaming/streaming/public/season?dir={{$directory}}" >Launch</a> </br>
+  
+  
+
+    </div>
+  </div>
+  </div>
+     @endforeach
+        </div>
+        </div>
     </body>
 </html>

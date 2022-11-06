@@ -5,7 +5,6 @@
         <meta name="viewport" >
 
         <title>Laravel</title>
-        
 <!-- CSS only -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 <link href="/streaming/streaming/public/storage/css/style.css" rel="stylesheet">           
@@ -25,8 +24,50 @@
         </style>
     </head>
     <body class="antialiased">
-      @include('layouts.header')
-    
-       
-    </body>
-</html>
+
+    @include('layouts.header')
+    <div class="shows_container">
+    @php
+      $useragent=$_SERVER['HTTP_USER_AGENT'];
+         $Android = stripos($useragent, "Android"); 
+        $iOS = stripos($useragent, "iOS");
+        $Windows = stripos($useragent, "Windows"); 
+      
+   @endphp
+    <div class="row">
+
+    @foreach ($files as $file )
+    @php
+     $infos=pathinfo($file);
+     $filename=$infos['filename'];
+     $extension=$infos['extension'];
+        
+    @endphp
+    @if ($extension=="mkv"||$extension=="mp4")
+      <div class="col-sm-3">
+    <div class="card">
+   
+    <div class="card-body">
+      <h5 class="card-title"> Name; {{$filename}}</h5>
+    <p> extension: {{$extension}}</p>
+  
+            @php 
+            if($Android==null){
+  
+                echo("<a class=\"btn btn-primary\" href=\"/streaming/streaming/public/play?file=$file&dir=$dir\" >Play</a> </br> ");
+            }else{
+                echo("<a class=\"btn btn-primary\" href=\"intent://192.168.1.11:80/Streaming/streaming/public/storage/videos/$filename.$extension#Intent;scheme=http;package=org.videolan.vlc;end\">Play</a>");
+            }
+            @endphp
+  
+
+    </div>
+  </div>
+  </div>
+        
+  @endif
+     @endforeach
+        </div>
+        </body>
+
+        </html>

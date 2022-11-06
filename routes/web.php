@@ -13,5 +13,9 @@ use App\Http\Controllers\HomeController;
 |
 */
 
-Route::get('/', [HomeController::class,'__construct']);
+Route::get('/', function (){
+    return view('welcome');
+});
+Route::get('/streaming/streaming/public/shows', [HomeController::class,'__construct']);
 Route::get('/streaming/streaming/public/play', [HomeController::class,'play']);
+Route::get('/streaming/streaming/public/season', [HomeController::class,'show_season']);

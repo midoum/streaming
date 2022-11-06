@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ccbd816a07b206f971042295b899d1ba",
+    "content-hash": "e37b1f6beef53c971301db5a71cb4bd5",
     "packages": [
         {
             "name": "brick/math",
@@ -5095,6 +5095,61 @@
                 }
             ],
             "time": "2022-10-07T08:04:03+00:00"
+        },
+        {
+            "name": "tbetool/php-video-screenshot",
+            "version": "1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/TBETool/php-video-screenshot.git",
+                "reference": "9d1ddda6618a7a0ec75c6c6b8cc2802419e5c9c7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/TBETool/php-video-screenshot/zipball/9d1ddda6618a7a0ec75c6c6b8cc2802419e5c9c7",
+                "reference": "9d1ddda6618a7a0ec75c6c6b8cc2802419e5c9c7",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "TBETool\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Anuj Sharma",
+                    "email": "contact@anujsh.in",
+                    "homepage": "https://anujsh.in",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Generate/Take screenshot of the video file in PHP using FFMPEG",
+            "homepage": "http://thebornengineer.com",
+            "keywords": [
+                "Anuj Sharma",
+                "Anuj TBE",
+                "TBE",
+                "ffmpeg",
+                "ffmpeg php video screenshot",
+                "ffmpeg video screenshot",
+                "ffmpeg video thumbnail",
+                "generate video thumbnail in php",
+                "generate video thumbnail using ffmpeg in php",
+                "php ffmpeg",
+                "php video thumbnail",
+                "video screenshot",
+                "video thumbnail"
+            ],
+            "support": {
+                "issues": "https://github.com/TBETool/php-video-screenshot/issues",
+                "source": "https://github.com/TBETool/php-video-screenshot/tree/master"
+            },
+            "time": "2018-11-13T01:57:58+00:00"
         },
         {
             "name": "tijsverkoyen/css-to-inline-styles",
