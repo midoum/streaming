@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Thumbnails;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,3 +20,4 @@ Route::get('/', function (){
 Route::get('/streaming/streaming/public/shows', [HomeController::class,'__construct']);
 Route::get('/streaming/streaming/public/play', [HomeController::class,'play']);
 Route::get('/streaming/streaming/public/season', [HomeController::class,'show_season']);
+Route::get('/streaming/streaming/public/thumb', [Thumbnails::class,'__construct']);

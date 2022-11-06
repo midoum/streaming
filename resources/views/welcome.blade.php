@@ -27,6 +27,6 @@
     <body class="antialiased">
       @include('layouts.header')
     
-       
+      @include('layouts.footer');
     </body>
 </html>

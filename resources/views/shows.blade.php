@@ -38,14 +38,19 @@
       @php
      $infos=pathinfo($directory);
      $filename=$infos['filename'];
-            
+      
+      $files = Storage::disk('public')->allFiles($directory); 
+      $img_file=$files[0];  
+      $img_info=pathinfo($img_file) ;
+      $img=$img_info['filename'];
         
     @endphp
     
-      <div class="col-sm-3">
-    <div class="card">
+      <div class="col-sm-2">
+    <div class="card" >
    
     <div class="card-body">
+    <img class="card-img-top" src="/streaming/streaming/public/storage/thumbnails/{{$img}}.jpg" alt="Card image cap">
       <h5 class="card-title"> Name; {{$filename}}</h5>
       <a class="btn btn-primary" href="/streaming/streaming/public/season?dir={{$directory}}" >Launch</a> </br>
   
@@ -57,5 +62,6 @@
      @endforeach
         </div>
         </div>
+        @include('layouts.footer');
     </body>
 </html>

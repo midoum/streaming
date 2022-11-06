@@ -10,8 +10,8 @@ class HomeController extends BaseController
 {
 
     function __construct(){
-        $path= 'storage/videos';
-        $directories = Storage::disk('public')->allDirectories($path);
+        $path= 'storage/videos/shows';
+        $directories = Storage::disk('public')->Directories($path);
         
       
         $vlc='C:\Program Files\VideoLAN\VLC\vlc.exe';

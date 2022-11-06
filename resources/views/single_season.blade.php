@@ -44,11 +44,13 @@
         
     @endphp
     @if ($extension=="mkv"||$extension=="mp4")
-      <div class="col-sm-3">
+      <div class="col-sm-2">
     <div class="card">
    
     <div class="card-body">
+    <img class="card-img-top" src="/streaming/streaming/public/storage/thumbnails/{{$filename}}.jpg" alt="Card image cap">
       <h5 class="card-title"> Name; {{$filename}}</h5>
+      
     <p> extension: {{$extension}}</p>
   
             @php 
@@ -56,7 +58,7 @@
   
                 echo("<a class=\"btn btn-primary\" href=\"/streaming/streaming/public/play?file=$file&dir=$dir\" >Play</a> </br> ");
             }else{
-                echo("<a class=\"btn btn-primary\" href=\"intent://192.168.1.11:80/Streaming/streaming/public/storage/videos/$filename.$extension#Intent;scheme=http;package=org.videolan.vlc;end\">Play</a>");
+                echo("<a class=\"btn btn-primary\" href=\"intent://192.168.1.11:80/streaming/streaming/public/$file#Intent;scheme=http;package=org.videolan.vlc;end\">Play</a>");
             }
             @endphp
   
@@ -68,6 +70,7 @@
   @endif
      @endforeach
         </div>
+        @include('layouts.footer');
         </body>
 
         </html>
