@@ -58,7 +58,7 @@
   
                 echo("<a class=\"btn btn-primary\" href=\"/streaming/streaming/public/play?file=$file&dir=$dir\" >Play</a> </br> ");
             }else{
-                echo("<a class=\"btn btn-primary\" href=\"intent://192.168.1.11:80/streaming/streaming/public/$file#Intent;scheme=http;package=org.videolan.vlc;end\">Play</a>");
+                echo("<a class=\"btn btn-primary\" href=\"intent://192.168.1.18:80/streaming/streaming/public/$file#Intent;scheme=http;package=org.videolan.vlc;end\">Play</a>");
             }
             @endphp
   
