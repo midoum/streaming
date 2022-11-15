@@ -10,7 +10,7 @@ class Thumbnails extends BaseController
 {
 
     function __construct(){
-        $path= 'storage/videos/shows/Friends_Season_1';
+        $path= 'storage/videos/shows/';
         $files = Storage::disk('public')->allFiles($path);
         foreach($files as $file){
         $infos=pathinfo($file);

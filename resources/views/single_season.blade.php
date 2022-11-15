@@ -41,7 +41,8 @@
      $infos=pathinfo($file);
      $filename=$infos['filename'];
      $extension=$infos['extension'];
-        
+         
+    
     @endphp
     @if ($extension=="mkv"||$extension=="mp4")
       <div class="col-sm-2">
@@ -54,11 +55,12 @@
     <p> extension: {{$extension}}</p>
   
             @php 
+            $ip=$_SERVER['HTTP_HOST'] ; 
             if($Android==null){
   
                 echo("<a class=\"btn btn-primary\" href=\"/streaming/streaming/public/play?file=$file&dir=$dir\" >Play</a> </br> ");
             }else{
-                echo("<a class=\"btn btn-primary\" href=\"intent://192.168.1.18:80/streaming/streaming/public/$file#Intent;scheme=http;package=org.videolan.vlc;end\">Play</a>");
+                echo("<a class=\"btn btn-primary\" href=\"intent://$ip:80/streaming/streaming/public/$file#Intent;scheme=http;package=org.videolan.vlc;end\">Play</a>");
             }
             @endphp
   
